@@ -1,7 +1,7 @@
 <mujoco model="a1">
   <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
 
-  <option cone="pyramidal" impratio="100"/>
+  <option cone="elliptic" impratio="100"/>
 
   <default>
     <default class="a1">
@@ -74,8 +74,8 @@
         fullinertia="0.0158533 0.0377999 0.0456542 -3.66e-05 -6.11e-05 -2.75e-05"/>
       <geom class="visual" mesh="trunk" material="carbonfibre"/>
       <geom class="collision" size="0.125 0.04 0.057" type="box"/>
-      <!-- <geom class="collision" quat="1 0 1 0" pos="0 -0.04 0" size="0.058 0.125" type="cylinder"/>
-      <geom class="collision" quat="1 0 1 0" pos="0 +0.04 0" size="0.058 0.125" type="cylinder"/> -->
+      <geom class="collision" quat="1 0 1 0" pos="0 -0.04 0" size="0.058 0.125" type="cylinder"/>
+      <geom class="collision" quat="1 0 1 0" pos="0 +0.04 0" size="0.058 0.125" type="cylinder"/>
       <geom class="collision" pos="0.25 0 0" size="0.005 0.06 0.05" type="box"/>
       <geom class="collision" pos="0.25 0.06 -0.01" size="0.009 0.035"/>
       <geom class="collision" pos="0.25 -0.06 -0.01" size="0.009 0.035"/>
@@ -112,7 +112,7 @@
         <joint class="abduction" name="FL_hip_joint"/>
         <geom class="visual" mesh="hip"/>
         <geom class="hip_left"/>
-        <!-- <geom class="collision" size="0.04 0.04" pos="0 0.055 0" quat="1 1 0 0" type="cylinder"/> -->
+        <geom class="collision" size="0.04 0.04" pos="0 0.055 0" quat="1 1 0 0" type="cylinder"/>
         <body name="FL_thigh" pos="0 0.08505 0">
           <inertial mass="1.013" pos="-0.003237 -0.022327 -0.027326" quat="0.999125 0.00256393 -0.0409531 0.00806091"
             diaginertia="0.00555739 0.00513936 0.00133944"/>

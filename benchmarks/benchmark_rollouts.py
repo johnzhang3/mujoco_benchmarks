@@ -6,11 +6,11 @@ import timeit
 from mujoco import rollout
 from etils import epath
 
-path = epath.Path(epath.resource_path('mujoco')) / (
-        'mjx/benchmark/model/humanoid')
-model = mujoco.MjModel.from_xml_path(
-    (path / 'humanoid.xml').as_posix())
-# model = mujoco.MjModel.from_xml_path("robots/a1/scene.xml")
+# path = epath.Path(epath.resource_path('mujoco')) / (
+#         'mjx/benchmark/model/humanoid')
+# model = mujoco.MjModel.from_xml_path(
+#     (path / 'humanoid.xml').as_posix())
+model = mujoco.MjModel.from_xml_path("robots/a1/scene.xml")
 # model = mujoco.MjModel.from_xml_path("robots/google_barkour_v0/scene.xml")
 
 data = mujoco.MjData(model)

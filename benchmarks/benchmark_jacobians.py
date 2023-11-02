@@ -5,7 +5,7 @@ import mujoco
 import timeit
 import torch 
 
-model = mujoco.MjModel.from_xml_path("robots/a1/a1.xml")
+model = mujoco.MjModel.from_xml_path("robots/a1/scene.xml")
 data = mujoco.MjData(model)
 
 thread_local = threading.local()
