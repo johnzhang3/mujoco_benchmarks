@@ -41,11 +41,12 @@ num_workers = 20
 A, B = compute_multi_jacobian(n=n, num_workers=num_workers)
 print(f"A shape: {A.shape}")
 
-t_to_torch = timeit.timeit(lambda: torch.from_numpy(A).to("cuda"), number=10)/10
+A_torch = torch.from_numpy(A)
+t_to_torch = timeit.timeit(lambda: A_torch.to("cuda"), number=100)/100
 print(f"cpu to gpu time: {t_to_torch}") # 0.25 seconds
 
 A_torch = torch.from_numpy(A).to("cuda")
-t_to_cpu = timeit.timeit(lambda: A_torch.cpu().numpy(), number=10)/10 
+t_to_cpu = timeit.timeit(lambda: A_torch.cpu().numpy(), number=100)/100
 print(f"gpu to cpu time: {t_to_cpu}") # 0.01 seconds
 
 t_jacobian = timeit.timeit(lambda: compute_multi_jacobian(n=4000, num_workers=20), number=10)/10
